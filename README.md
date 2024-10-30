@@ -22,7 +22,7 @@ Google Contacts supporting help: https://support.google.com/contacts/answer/7199
    ![image](https://github.com/user-attachments/assets/8f974761-e57e-4740-b8a7-1434f704e492)
 4. Be sure to **BACKUP THIS FILE SOMEWHERE**!!! In case things go wrong this file will have everything as it currently stands
 5. Download this VCF Name Fix program and run it
-   - Get the program zip here - https://github.com/dragpent/VCF-Name-Fix/releases/download/v1.0.0/VCF.Name.Fix.zip
+   - Get the program zip here - https://github.com/dragpent/VCF-Name-Fix/releases/download/v1.0.1/VCF.Name.Fix.zip
    - Unzip the file
    - Run VCF Name Fix.exe
    - Microsoft Defender won't like this but you can click More info, and Run anyway (if anyone knows a better way to release let me know, new to releasing specifically)
