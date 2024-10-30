@@ -6,6 +6,8 @@ https://www.reddit.com/r/GooglePixel/comments/1eks9ax/contacts_in_text_messages_
 
 Special thanks to abmuemzl who got me pointed in the right direction to resolve
 
+Google Contacts supporting help: https://support.google.com/contacts/answer/7199294?hl=en&co=GENIE.Platform%3DDesktop
+
 ## Steps to fix
 
 1. Go to your Google Contacts page - https://contacts.google.com/u/0/
