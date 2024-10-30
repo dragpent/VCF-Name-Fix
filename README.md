@@ -13,7 +13,7 @@ Google Contacts supporting help: https://support.google.com/contacts/answer/7199
 ## Steps to fix
 
 1. Go to your Google Contacts page - https://contacts.google.com/u/0/
-2. Select all (select one and then you can click drop down to select all)
+2. Select all (select one and then you can click drop down **triangle** to select all)
    
    ![image](https://github.com/user-attachments/assets/9f6d629d-1725-497d-9626-549befa17515)
 3. Afterwards click the ... and export as VCF
