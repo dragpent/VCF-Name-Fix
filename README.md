@@ -1,6 +1,6 @@
 # VCF Name Fix
 
-This was written because of me having an issue with the way my contacts were showing up in Messages. At some point in July 2024 this started occuring:
+This was written because of me having an issue with the way my contacts were showing up as "Last Name First Name" instead of "First Name Last Name" in Messages. At some point in ~July 2024 this started occuring:
 
 https://www.reddit.com/r/GooglePixel/comments/1eks9ax/contacts_in_text_messages_showing_last_name/
 
