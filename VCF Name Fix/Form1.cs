@@ -62,7 +62,6 @@ namespace VCF_Name_Fix
                 var currentFormattedName = "";
                 var nameDetails = "";
                 var fixedFormattedName = "";
-                var fixedSpaceName = "";
 
                 bool containedSpaces = false;
 
@@ -129,6 +128,7 @@ namespace VCF_Name_Fix
                         currentFormattedName = "";
                         nameDetails = "";
                         fixedFormattedName = "";
+                        containedSpaces = false;
                     }
                 }
 
