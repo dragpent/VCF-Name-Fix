@@ -8,6 +8,8 @@ Special thanks to abmuemzl who got me pointed in the right direction to resolve
 
 Google Contacts supporting help: https://support.google.com/contacts/answer/7199294?hl=en&co=GENIE.Platform%3DDesktop
 
+**This assumes your contacts are generic first name last name, the code *should* handle special prefixes and suffixes but I didn't test and I don't have contacts saved that way**
+
 ## Steps to fix
 
 1. Go to your Google Contacts page - https://contacts.google.com/u/0/
