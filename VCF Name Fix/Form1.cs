@@ -59,9 +59,12 @@ namespace VCF_Name_Fix
                 string[] stringSeparators = new string[] { "\r\n" };
                 string[] vcfData = fileContent.Split(stringSeparators, StringSplitOptions.None);
 
-                var currentName = "";
+                var currentFormattedName = "";
                 var fullName = "";
-                var fixedName = "";
+                var fixedFormattedName = "";
+                var fixedSpaceName = "";
+
+                bool containedSpaces = false;
 
                 // Now we need to loop through the results
                 for (int i = 0; i < vcfData.Length; i++)
@@ -72,7 +75,7 @@ namespace VCF_Name_Fix
                     if (vcfRow.StartsWith("FN:"))
                     {
                         // We are on the first name
-                        currentName = vcfRow.TextAfter("FN:");
+                        currentFormattedName = vcfRow.TextAfter("FN:");
                     }
                     else if (vcfRow.StartsWith("N:"))
                     {
@@ -92,24 +95,40 @@ namespace VCF_Name_Fix
                             // 4 Suffixes
                             if (fullNameParts.Length == 5)
                             {
+                                // Let's also fix any erroneous spaces if it exists
+                                for (int x = 0; x < fullNameParts.Length; x++)
+                                {
+                                    var part = fullNameParts[x];
+                                    if (part.EndsWith(" ") || part.StartsWith(" "))
+                                    {
+                                        fullNameParts[x] = part.Trim();
+                                        containedSpaces = true;
+                                    }
+                                }
+
+                                if (containedSpaces == true)
+                                {
+                                    vcfData[i] = "N:" + String.Join(";", fullNameParts);
+                                }
+
                                 // Let's build out the 'correct' name
                                 fullNameParts.Switch(3, 0);
-                                fixedName = String.Join(" ", fullNameParts.Where(s => !string.IsNullOrEmpty(s)));
+                                fixedFormattedName = String.Join(" ", fullNameParts.Where(s => !string.IsNullOrEmpty(s)));
 
                                 // Now that we have the 'correct' name let's compare
-                                if (!fixedName.Equals(currentName))
+                                if (!fixedFormattedName.Equals(currentFormattedName))
                                 {
                                     // This means the name is WRONG let's update
                                     // FN appears to always be before N
-                                    vcfData[i - 1] = "FN:" + fixedName;
+                                    vcfData[i - 1] = "FN:" + fixedFormattedName;
                                 }
                             }
                         }
                         // Here let's reset our data
 
-                        currentName = "";
+                        currentFormattedName = "";
                         fullName = "";
-                        fixedName = "";
+                        fixedFormattedName = "";
                     }
                 }
 
