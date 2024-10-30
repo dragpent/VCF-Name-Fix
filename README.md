@@ -21,19 +21,32 @@ Google Contacts supporting help: https://support.google.com/contacts/answer/7199
    ![image](https://github.com/user-attachments/assets/cb91c93d-973f-403f-9eaa-a6e0033ba3da)
    ![image](https://github.com/user-attachments/assets/8f974761-e57e-4740-b8a7-1434f704e492)
 4. Be sure to **BACKUP THIS FILE SOMEWHERE**!!! In case things go wrong this file will have everything as it currently stands
-5. Run this program and click "Open VCF File" to upload the VCF file from step 3
-6. Once file is loaded "Process and Save" will be available - click this, this will update the data and save a new VCF file onto your desktop. ~Desktop\FixedVCF.vcf
+5. Download this VCF Name Fix program and run it
+   - Get the program zip here - https://github.com/dragpent/VCF-Name-Fix/releases/download/v1.0.0/VCF.Name.Fix.zip
+   - Unzip the file
+   - Run VCF Name Fix.exe
+   - Microsoft Defender won't like this but you can click More info, and Run anyway (if anyone knows a better way to release let me know, new to releasing specifically)
+
+![image](https://github.com/user-attachments/assets/24bc0487-4e2e-4571-9078-3ee79aaa377f)
+
+![image](https://github.com/user-attachments/assets/7ab7b8a4-c614-4c72-b887-722166358cbf)
+
+![image](https://github.com/user-attachments/assets/078177d1-b8f4-478a-a2d7-adf08277c0b6)
+
+6. Click "Open VCF File" to upload the VCF file from step 3
+7. Once file is loaded "Process and Save" will be available - click this, this will update the data and save a new VCF file onto your desktop. ~Desktop\FixedVCF.vcf
    - Do a sanity check and review the data and confirm the data now looks correct (you can use notepad to open review)
-7. In Google Contacts select all again (step 2) but delete contacts this time
+8. In Google Contacts select all again (step 2) but delete contacts this time
 
    - Note that these deleted contacts will still be in your Trash if there is a need to restore
      
    ![image](https://github.com/user-attachments/assets/cf38f2f4-3762-461c-8544-9a7ea7389d58)
-8. Import the FixedVCF.vcf file from your desktop to Google Contacts 
+9. Import the FixedVCF.vcf file from your desktop to Google Contacts 
 
    ![image](https://github.com/user-attachments/assets/e614a0af-46ec-4784-a55d-5eedf673b461)
 
-9. This import will create a label with the date, you can delete this label to keep your contacts clean after confirming all is looking correct.
+10. This import will create a label with the date, you can delete this label to keep your contacts clean after confirming all is looking correct.
 
    ![image](https://github.com/user-attachments/assets/8c100820-23ac-4b38-a2f2-dcb88de0b275)
-10. Success?
+   
+11. Success?
