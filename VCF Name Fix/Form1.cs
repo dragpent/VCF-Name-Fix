@@ -60,7 +60,7 @@ namespace VCF_Name_Fix
                 string[] vcfData = fileContent.Split(stringSeparators, StringSplitOptions.None);
 
                 var currentFormattedName = "";
-                var fullName = "";
+                var nameDetails = "";
                 var fixedFormattedName = "";
                 var fixedSpaceName = "";
 
@@ -74,18 +74,18 @@ namespace VCF_Name_Fix
                     // Let's check what data we are on
                     if (vcfRow.StartsWith("FN:"))
                     {
-                        // We are on the first name
+                        // We are on the formatted name
                         currentFormattedName = vcfRow.TextAfter("FN:");
                     }
                     else if (vcfRow.StartsWith("N:"))
                     {
-                        // We are on the full name
-                        fullName = vcfRow.TextAfter("N:");
+                        // We are on the name
+                        nameDetails = vcfRow.TextAfter("N:");
 
-                        // With this full name let's split out what it 'should be'
-                        if (fullName.Contains(";"))
+                        // With this name let's split out what it 'should be'
+                        if (nameDetails.Contains(";"))
                         {
-                            string[] fullNameParts = fullName.Split(';');
+                            string[] nameParts = nameDetails.Split(';');
 
                             // Check we have the right data
                             // 0 Family Name
@@ -93,27 +93,27 @@ namespace VCF_Name_Fix
                             // 2 Middle Name
                             // 3 Prefixes
                             // 4 Suffixes
-                            if (fullNameParts.Length == 5)
+                            if (nameParts.Length == 5)
                             {
                                 // Let's also fix any erroneous spaces if it exists
-                                for (int x = 0; x < fullNameParts.Length; x++)
+                                for (int x = 0; x < nameParts.Length; x++)
                                 {
-                                    var part = fullNameParts[x];
+                                    var part = nameParts[x];
                                     if (part.EndsWith(" ") || part.StartsWith(" "))
                                     {
-                                        fullNameParts[x] = part.Trim();
+                                        nameParts[x] = part.Trim();
                                         containedSpaces = true;
                                     }
                                 }
 
                                 if (containedSpaces == true)
                                 {
-                                    vcfData[i] = "N:" + String.Join(";", fullNameParts);
+                                    vcfData[i] = "N:" + String.Join(";", nameParts);
                                 }
 
                                 // Let's build out the 'correct' name
-                                fullNameParts.Switch(3, 0);
-                                fixedFormattedName = String.Join(" ", fullNameParts.Where(s => !string.IsNullOrEmpty(s)));
+                                nameParts.Switch(3, 0);
+                                fixedFormattedName = String.Join(" ", nameParts.Where(s => !string.IsNullOrEmpty(s)));
 
                                 // Now that we have the 'correct' name let's compare
                                 if (!fixedFormattedName.Equals(currentFormattedName))
@@ -127,7 +127,7 @@ namespace VCF_Name_Fix
                         // Here let's reset our data
 
                         currentFormattedName = "";
-                        fullName = "";
+                        nameDetails = "";
                         fixedFormattedName = "";
                     }
                 }
